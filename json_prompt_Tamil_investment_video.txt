@@ -1,0 +1,50 @@
+{
+  "project_name": "Stop Saving Start Investing",
+  "global_settings": {
+    "aspect_ratio": "9:16",
+    "model": "google-flow-video",
+    "captions": "off",
+    "subtitles": "off",
+    "output_per_prompt": 1
+  },
+  "scenes": [
+    {
+      "scene_id": "scene_1",
+      "duration_minutes": 0.08,
+      "video_prompt": "Same handsome adult Indian male presenter looking calmly at the camera. Same face, hairstyle, beard, outfit. Clean light studio background, soft professional lighting, static medium camera angle. Calm, confident body language. No text, no graphics, no camera movement.",
+      "voiceover": "நீங்க சேமிக்கிற பணம் உண்மையில பாதுகாப்பா இருக்கா?",
+      "text_overlay": null
+    },
+    {
+      "scene_id": "scene_2",
+      "duration_minutes": 0.07,
+      "video_prompt": "Same handsome adult Indian male presenter continuing from Scene 1. Same appearance, lighting and camera angle. Beside him, simple visual symbols appear: a bank building icon with a small percentage sign, followed by a rupee symbol slowly shrinking. No text, no captions, no arrows.",
+      "voiceover": "வங்கியில் சேமிச்சா வட்டி குறைவு. பணத்தின் மதிப்பு குறையுது.",
+      "text_overlay": null
+    },
+    {
+      "scene_id": "scene_3",
+      "duration_minutes": 0.25,
+      "video_prompt": "Same handsome adult Indian male presenter standing slightly to the left. Same appearance and studio setup. On the right side, visual storytelling elements appear sequentially: a piggy bank with few coins, calendar pages flipping, coin stacks growing taller, and a small plant growing into a healthy tree. No text, no numbers, no arrows.",
+      "voiceover": "உதாரணமா பாருங்க. மாதம் 2,000 ரூபாய் முதலீடு பண்ணினா, காலத்தோடே அது பெரிய தொகையா மாறும். இதுதான் முதலீட்டின் சக்தி.",
+      "text_overlay": null
+    },
+    {
+      "scene_id": "scene_4",
+      "duration_minutes": 0.17,
+      "video_prompt": "Same handsome adult Indian male presenter standing slightly to the right. Same face, hairstyle, beard and outfit. Clean studio background, soft lighting, static camera. On the left side, future-planning imagery appears slowly: a modern family house, graduation cap with books, medical cross with stethoscope, and a peaceful retirement lifestyle scene. No text, no numbers, no arrows.",
+      "voiceover": "இப்பவே முதலீடு ஆரம்பிச்சா, எதிர்கால தேவைகளுக்கும் வீடு மாதிரி சொத்துகளுக்கும் பணம் தயாராகும்.",
+      "text_overlay": null
+    },
+    {
+      "scene_id": "final_frame",
+      "duration_minutes": 0.08,
+      "video_prompt": "Clean minimal background with no presenter. Strong professional typography appears at the center with cinematic lighting. No animation, just steady presence.",
+      "voiceover": null,
+      "text_overlay": {
+        "content": "STOP SAVING. START INVESTING",
+        "style": "big bold professional center"
+      }
+    }
+  ]
+}
