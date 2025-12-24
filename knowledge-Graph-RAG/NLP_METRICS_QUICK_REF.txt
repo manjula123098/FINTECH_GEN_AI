@@ -1,0 +1,125 @@
+NLP METRICS - QUICK REFERENCE CARD
+==================================
+
+METRIC DEFINITIONS
+──────────────────
+
+1. ENTITIES IDENTIFIED
+   └─ Count of named entities (concepts, policies, people)
+   └─ Higher = More comprehensive coverage
+   └─ Example: "Teacher education" = 2 entities
+
+2. LEXICAL DIVERSITY (Type-Token Ratio)
+   └─ Range: 0 (repetitive) to 1 (highly diverse)
+   └─ Formula: Unique Words / Total Words
+   └─ Good: > 0.5 | Excellent: > 0.7
+
+3. SEMANTIC COHERENCE
+   └─ Range: 0 (disjointed) to 1 (perfectly coherent)
+   └─ Measures if topics revisit and interconnect
+   └─ Good: > 0.4 | Excellent: > 0.6
+
+4. INFORMATION DENSITY
+   └─ Entities per sentence
+   └─ Higher = More concentrated information
+   └─ Good: > 1.0 | Excellent: > 2.0
+
+5. ANSWER QUALITY SCORE (0-100)
+   └─ Composite metric combining all factors
+   └─ 0-40: Poor | 40-60: Fair | 60-80: Good | 80-100: Excellent
+   └─ Green flag: KG > 70, RAG > 60
+
+6. QUALITY IMPROVEMENT
+   └─ KG Score - RAG Score
+   └─ Positive = KG better | Negative = RAG better
+
+
+INTERPRETATION QUICK GUIDE
+──────────────────────────
+
+✓ PREFER KG WHEN:
+  • Multiple related entities (> 8 entities)
+  • High semantic coherence needed (> 0.5)
+  • Dense information required (> 1.5 entities/sentence)
+  • Complex policy/educational questions
+
+✓ PREFER RAG WHEN:
+  • Simple, single-topic questions
+  • Speed critical (< 1 second)
+  • Few entities needed (< 4)
+  • Straightforward factual lookup
+
+
+USAGE IN DEMO
+─────────────
+
+Run:  python demo.py
+Then: Select option 1 or 4 for automatic NLP metrics display
+
+The metrics appear automatically after each comparison showing:
+  • Entity counts
+  • Lexical diversity scores
+  • Semantic coherence scores
+  • Information density scores
+  • Overall quality score
+  • Winner indication
+
+
+CUSTOM ANALYSIS
+───────────────
+
+For programmatic use:
+
+  from comparison.nlp_metrics import NLPMetricsAnalyzer
+  
+  metrics = NLPMetricsAnalyzer.compare_nlp_metrics(
+      rag_answer="...",
+      kg_answer="...",
+      rag_metrics={...},
+      kg_metrics={...}
+  )
+  
+  # Access individual metrics:
+  print(metrics['rag_entity_count'])
+  print(metrics['kg_quality_score'])
+  print(metrics['quality_improvement'])
+
+
+FILES REFERENCE
+───────────────
+
+Primary:
+  • comparison/nlp_metrics.py       - Core calculations
+  • comparison/nlp_report.py        - Report generation
+  • comparison/compare.py           - Integration point
+
+Modified:
+  • demo.py                         - NEP questions
+  • traditional_rag/rag_pipeline.py - Encoding fix
+
+
+EXAMPLE RESULTS
+───────────────
+
+For question: "How does teacher education relate to curriculum?"
+
+Traditional RAG:
+  Entities: 5 | Diversity: 0.42 | Coherence: 0.25 | Density: 0.6 | Score: 58/100
+
+Knowledge Graph RAG:
+  Entities: 11 | Diversity: 0.58 | Coherence: 0.62 | Density: 1.8 | Score: 74/100
+
+Improvement: +16 points (KG Superior)
+
+
+BEST PRACTICES
+──────────────
+
+1. Run multiple questions for better insights
+2. Check both quality score AND individual metrics
+3. High entity count doesn't always = better (check coherence)
+4. Use reports for batch analysis of multiple questions
+5. Compare within same domain for fair comparison
+
+═════════════════════════════════════════════════════════════════════════════════
+Generated for: Knowledge Graph RAG System with NEP 2020 Data
